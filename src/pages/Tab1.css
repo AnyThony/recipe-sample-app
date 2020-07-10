@@ -1,0 +1,22 @@
+.section-title{
+    font-size:24px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.h-list{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    height: 140px;
+    width: 100%;
+}
+
+.child-container{
+    position: absolute;
+    margin-top: 16px;
+    height: 100%;
+    width: 100%;
+    padding: 15px;
+}

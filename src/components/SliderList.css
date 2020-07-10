@@ -1,0 +1,14 @@
+.swiper-container {
+  height: 150px;
+}
+
+.slider-list{
+  margin-top: -15px;
+}
+
+ion-slides {
+  position: relative;
+  top: 0;
+  width: calc(100% + 30px);
+  left: -15px;
+}

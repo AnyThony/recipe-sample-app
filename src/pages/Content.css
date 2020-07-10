@@ -1,0 +1,7 @@
+.child-container{
+    position: absolute;
+    margin-top: 16px;
+    height: 100%;
+    width: 100%;
+    padding: 15px;
+}
