@@ -22,7 +22,7 @@ const SliderList: React.FC<ContainerProps> = ({ label, data, cardSize, options={
 
   const populate = (data:Array<cardData>) => {
     return data.map((d: cardData, index: number)=> (
-      <IonSlide key={index}>
+      <IonSlide style={{height: cardSize+"px", width: (cardSize*(4/3))+"px"}} key={index}>
         <ShowcaseImg id={d.key} key={d.key} cardSize={cardSize} desc={d.desc} src={d.src} />
       </IonSlide>
     ))

@@ -6,6 +6,9 @@ import mockData from "../components/mock/data.json"
 
 type RawMockData = {
   thumbnail: string,
+  meta: Array<string>,
+  instructions: Array<string>,
+  ingredients: Array<string>,
   cat: string,
   name: string
 }
@@ -38,7 +41,7 @@ const Tab1: React.FC = () => {
       result.push(
         <SliderList 
           key={index} 
-          options={slideContentMedium} 
+          options={slideContent} 
           cardSize={110} 
           label={title(c)} 
           data={content} 
@@ -67,7 +70,7 @@ const Tab1: React.FC = () => {
           <SliderList
            key={-1} 
            labelSize={28} 
-           options={slideContentBig} 
+           options={slideContent} 
            cardSize={140} 
            label={"Popular"} 
            data={getPopular()} 
@@ -80,15 +83,17 @@ const Tab1: React.FC = () => {
   );
 };
 
-const slideContentBig = {
+/*const slideContentBig = {
   spaceBetween: -115,
   slidesOffsetBefore: -50,
   slidesOffsetAfter: -50
+}*/
+const slideContent = {
+  slidesPerView: "auto",
+  spaceBetween: 15,
+  slidesOffsetBefore: 15,
+  slidesOffsetAfter: 15
 }
-const slideContentMedium = {
-  spaceBetween: -155, 
-  slidesOffsetBefore: -71, 
-  slidesOffsetAfter: -71
-}
+
 
 export default Tab1;

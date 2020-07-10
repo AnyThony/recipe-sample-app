@@ -1,16 +1,30 @@
 import React from 'react';
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonSlides, IonSlide } from '@ionic/react';
 import SliderList from "../components/SliderList";
-import './Tab1.css';
+import './Content.css';
 import mockData from "../components/mock/data.json"
 import { filter } from 'ionicons/icons';
-
-interface ContainerProps {
-  id: number
+import { useHistory } from "react-router-dom";
+import MockData from "../components/mock/data.json";
+interface HistoryState {
+  id?: number
 }
 
-const Tab1: React.FC = () => {
+type RawMockData = {
+  thumbnail: string,
+  meta: Array<string>,
+  instructions: Array<string>,
+  ingredients: Array<string>,
+  cat: string,
+  name: string
+}
 
+const Content: React.FC = () => {
+  const history = useHistory();
+  const state: any & HistoryState = history.location.state;
+  var id: number = state.id || 0;
+  var data: RawMockData = MockData[id];
+  console.log(data);
   return (
     <IonPage>
       <IonHeader>
@@ -19,11 +33,11 @@ const Tab1: React.FC = () => {
         <IonHeader>
         </IonHeader>
         <div className="child-container">
-          <strong>test</strong>
+          <strong className="content-title">{data.name}</strong>
         </div>
       </IonContent>
     </IonPage>
   );
 };
 
-export default Tab1;
+export default Content;
