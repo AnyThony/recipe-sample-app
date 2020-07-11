@@ -14,8 +14,9 @@ const ShowcaseImg: React.FC<ContainerProps> = ({ desc, src, cardSize, id }) => {
   const history = useHistory();
   const clicked = () => {
     console.log(desc, id);
-    history.push("/content", {
-      id: id
+    history.replace("/content", {
+      id: id,
+      prev: history.location.pathname
     });
   }
 

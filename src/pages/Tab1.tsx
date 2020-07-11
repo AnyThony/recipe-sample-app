@@ -3,6 +3,7 @@ import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonSlides, IonSli
 import SliderList from "../components/SliderList";
 import './Tab1.css';
 import mockData from "../components/mock/data.json"
+import {title} from "../util";
 
 type RawMockData = {
   thumbnail: string,
@@ -16,13 +17,6 @@ type RawMockData = {
 const cats = ["latin american", "home", "beans and peas", "potatoes", "pork ribs", "vegetables", "macaroni and cheese", "shellfish", "chicken", "potato side dishes", "breakfast and brunch", "salad", "banana bread", "quick bread", "world cuisine", "eggs", "meat and seafood", "pancakes", "asian", "seafood salad", "sandwiches", "european", "meat and poultry", "fish", "pork", "chili", "appetizers and snacks", "stuffed main dishes", "soups, stews and chili", "main dishes", "stews"];
 
 const Tab1: React.FC = () => {
-
-  function title(str:string)
-  {
-    return str.replace(/\w\S*/g, function(txt){
-      return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
-    });
-  }
 
   const mapRawData = (raw: Array<RawMockData>) => {
     return raw.map((d, index) => ({
@@ -62,9 +56,15 @@ const Tab1: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
+        <IonToolbar>
+          <IonTitle>Recipes</IonTitle>
+        </IonToolbar>
       </IonHeader>
       <IonContent className="main-content">
-        <IonHeader>
+      <IonHeader collapse="condense">
+          <IonToolbar>
+            <IonTitle size="large">Recipes</IonTitle>
+          </IonToolbar>
         </IonHeader>
         <div className="child-container">
           <SliderList

@@ -2,6 +2,7 @@ import React from 'react';
 import './SliderList.css';
 import { IonSlides, IonSlide } from '@ionic/react';
 import ShowcaseImg from "./ShowcaseImg";
+
 interface ContainerProps {
   key: number;
   label: string;

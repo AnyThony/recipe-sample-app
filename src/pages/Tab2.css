@@ -1,0 +1,17 @@
+.saved-container{
+    margin-top: 7px;
+    height: 100%;
+    width: 100%;
+    padding: 15px;
+}
+
+.saved-container .showcase-img{
+    width: 100% !important;
+    margin-bottom: 15px;
+    text-align: center;
+    position: relative;
+}
+
+.saved-container strong{
+    font-size: 20px !important;
+}
