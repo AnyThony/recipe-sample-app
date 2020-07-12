@@ -1,4 +1,5 @@
 import React from 'react';
+import { useHistory } from "react-router-dom";
 import { Redirect, Route } from 'react-router-dom';
 import {
   IonApp,
@@ -9,7 +10,7 @@ import {
   IonTabButton,
   IonTabs
 } from '@ionic/react';
-import { IonReactRouter } from '@ionic/react-router';
+import { IonReactRouter, IonReactMemoryRouter } from '@ionic/react-router';
 import { ellipse, square, triangle, bookOutline, bookmarkOutline, settingsOutline } from 'ionicons/icons';
 import Tab1 from './pages/Tab1';
 import Tab2 from './pages/Tab2';
@@ -35,34 +36,37 @@ import '@ionic/react/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 
-const App: React.FC = () => (
-  <IonApp>
-    <IonReactRouter>
-      <IonTabs>
-        <IonRouterOutlet>
-          <Route path="/recipe-sample-app/browse" component={Tab1} exact={true} />
-          <Route path="/recipe-sample-app/saved" component={Tab2} exact={true} />
-          <Route path="/recipe-sample-app/settings" component={Tab3} />
-          <Route path="/recipe-sample-app/content" component={Content} exact={true}/>
-          <Route path="/recipe-sample-app/" render={() => <Redirect to="/recipe-sample-app/browse" />} exact={true} />
-        </IonRouterOutlet>
-        <IonTabBar slot="bottom">
-          <IonTabButton tab="browse" >
-            <IonIcon icon={bookOutline} />
-            <IonLabel>Browse</IonLabel>
-          </IonTabButton>
-          <IonTabButton tab="saved" >
-            <IonIcon icon={bookmarkOutline} />
-            <IonLabel>Saved</IonLabel>
-          </IonTabButton>
-          <IonTabButton tab="settings" >
-            <IonIcon icon={settingsOutline} />
-            <IonLabel>Settings</IonLabel>
-          </IonTabButton>
-        </IonTabBar>
-      </IonTabs>
-    </IonReactRouter>
-  </IonApp>
-);
+const App: React.FC = () => {
+  const history: any = useHistory();
+  return (
+    <IonApp>
+      <IonReactMemoryRouter history={history}>
+        <IonTabs>
+          <IonRouterOutlet>
+            <Route path="/recipe-sample-app/browse" component={Tab1} exact={true} />
+            <Route path="/recipe-sample-app/saved" component={Tab2} exact={true} />
+            <Route path="/recipe-sample-app/settings" component={Tab3} />
+            <Route path="/recipe-sample-app/content" component={Content} exact={true}/>
+            <Route path="/recipe-sample-app/" render={() => <Redirect to="/recipe-sample-app/browse" />} exact={true} />
+          </IonRouterOutlet>
+          <IonTabBar slot="bottom">
+            <IonTabButton tab="browse" href="/recipe-sample-app/browse">
+              <IonIcon icon={bookOutline} />
+              <IonLabel>Browse</IonLabel>
+            </IonTabButton>
+            <IonTabButton tab="saved" href="/recipe-sample-app/saved">
+              <IonIcon icon={bookmarkOutline} />
+              <IonLabel>Saved</IonLabel>
+            </IonTabButton>
+            <IonTabButton tab="settings" href="/recipe-sample-app/settings">
+              <IonIcon icon={settingsOutline} />
+              <IonLabel>Settings</IonLabel>
+            </IonTabButton>
+          </IonTabBar>
+        </IonTabs>
+      </IonReactMemoryRouter>
+    </IonApp>
+  );
+};
 
 export default App;
