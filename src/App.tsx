@@ -40,22 +40,22 @@ const App: React.FC = () => (
     <IonReactRouter>
       <IonTabs>
         <IonRouterOutlet>
-          <Route path="/recipe-sample-app/tab1" component={Tab1} exact={true} />
-          <Route path="/recipe-sample-app/tab2" component={Tab2} exact={true} />
-          <Route path="/recipe-sample-app/tab3" component={Tab3} />
+          <Route path="/recipe-sample-app/browse" component={Tab1} exact={true} />
+          <Route path="/recipe-sample-app/saved" component={Tab2} exact={true} />
+          <Route path="/recipe-sample-app/settings" component={Tab3} />
           <Route path="/recipe-sample-app/content" component={Content} exact={true}/>
-          <Route path="/recipe-sample-app/" render={() => <Redirect to="/recipe-sample-app/tab1" />} exact={true} />
+          <Route path="/recipe-sample-app/" render={() => <Redirect to="/recipe-sample-app/browse" />} exact={true} />
         </IonRouterOutlet>
         <IonTabBar slot="bottom">
-          <IonTabButton tab="tab1" href="/recipe-sample-app/tab1">
+          <IonTabButton tab="browse" href="/recipe-sample-app/browse">
             <IonIcon icon={bookOutline} />
             <IonLabel>Browse</IonLabel>
           </IonTabButton>
-          <IonTabButton tab="tab2" href="/recipe-sample-app/tab2">
+          <IonTabButton tab="saved" href="/recipe-sample-app/saved">
             <IonIcon icon={bookmarkOutline} />
             <IonLabel>Saved</IonLabel>
           </IonTabButton>
-          <IonTabButton tab="tab3" href="/recipe-sample-app/tab3">
+          <IonTabButton tab="settings" href="/recipe-sample-app/settings">
             <IonIcon icon={settingsOutline} />
             <IonLabel>Settings</IonLabel>
           </IonTabButton>
