@@ -14,7 +14,7 @@ const ShowcaseImg: React.FC<ContainerProps> = ({ desc, src, cardSize, id }) => {
   const history = useHistory();
   const clicked = () => {
     console.log(desc, id);
-    history.replace("/content", {
+    history.replace("/recipe-sample-app/content", {
       id: id,
       prev: history.location.pathname
     });
