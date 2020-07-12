@@ -60,7 +60,7 @@ const App: React.FC = () => {
               <IonIcon icon={bookmarkOutline} />
               <IonLabel>Saved</IonLabel>
             </IonTabButton>
-            <IonTabButton tab="settings" href="/recipe-sample-app/settings">
+            <IonTabButton tab="settings">
               <IonIcon icon={settingsOutline} />
               <IonLabel>Settings</IonLabel>
             </IonTabButton>
