@@ -1,5 +1,5 @@
 import React from 'react';
-import { useHistory } from "react-router-dom";
+import {createMemoryHistory} from 'history'
 import { Redirect, Route } from 'react-router-dom';
 import {
   IonApp,
@@ -35,9 +35,13 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
+import { MemoryHistory } from 'history';
 
 const App: React.FC = () => {
-  const history: any = useHistory();
+  const history:any = createMemoryHistory({
+    initialEntries: [],
+    initialIndex: 0
+  })
   return (
     <IonApp>
       <IonReactMemoryRouter history={history}>
