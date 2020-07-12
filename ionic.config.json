@@ -1,7 +1,0 @@
-{
-  "name": "recipe-sample-app",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "react"
-}
