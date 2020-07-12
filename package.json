@@ -2,6 +2,7 @@
   "name": "recipe-sample-app",
   "version": "0.0.1",
   "private": true,
+  "homepage": "https://anythony.github.io/recipe-sample-app/",
   "dependencies": {
     "@capacitor/core": "2.2.1",
     "@ionic/react": "^5.0.7",
