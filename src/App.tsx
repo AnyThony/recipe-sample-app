@@ -39,8 +39,7 @@ import { MemoryHistory } from 'history';
 
 const App: React.FC = () => {
   const history:any = createMemoryHistory({
-    initialEntries: [],
-    initialIndex: 0
+    initialEntries: ["/"]
   })
   return (
     <IonApp>
