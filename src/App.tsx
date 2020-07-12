@@ -39,7 +39,7 @@ import { MemoryHistory } from 'history';
 
 const App: React.FC = () => {
   const history:any = createMemoryHistory({
-    initialEntries: ["/", "/browse"]
+    initialEntries: ["/recipe-sample-app/"]
   })
   return (
     <IonApp>
