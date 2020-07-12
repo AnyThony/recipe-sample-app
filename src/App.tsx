@@ -47,15 +47,15 @@ const App: React.FC = () => (
           <Route path="/recipe-sample-app/" render={() => <Redirect to="/recipe-sample-app/browse" />} exact={true} />
         </IonRouterOutlet>
         <IonTabBar slot="bottom">
-          <IonTabButton tab="browse" href="/recipe-sample-app/browse">
+          <IonTabButton tab="browse" >
             <IonIcon icon={bookOutline} />
             <IonLabel>Browse</IonLabel>
           </IonTabButton>
-          <IonTabButton tab="saved" href="/recipe-sample-app/saved">
+          <IonTabButton tab="saved" >
             <IonIcon icon={bookmarkOutline} />
             <IonLabel>Saved</IonLabel>
           </IonTabButton>
-          <IonTabButton tab="settings" href="/recipe-sample-app/settings">
+          <IonTabButton tab="settings" >
             <IonIcon icon={settingsOutline} />
             <IonLabel>Settings</IonLabel>
           </IonTabButton>
