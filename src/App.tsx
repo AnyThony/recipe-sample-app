@@ -60,10 +60,6 @@ const App: React.FC = () => {
               <IonIcon icon={bookmarkOutline} />
               <IonLabel>Saved</IonLabel>
             </IonTabButton>
-            <IonTabButton tab="settings">
-              <IonIcon icon={settingsOutline} />
-              <IonLabel>Settings</IonLabel>
-            </IonTabButton>
           </IonTabBar>
         </IonTabs>
       </IonReactRouter>
