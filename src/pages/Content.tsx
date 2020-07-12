@@ -26,15 +26,19 @@ const Content: React.FC = () => {
   var id: number = (state && state.id) || 0;
   var data: RawMockData = MockData[id];
   var [saved, toggleSave] = useState(false);
+
+  // Update & check if already saved
   useEffect(() => {
     toggleSave(itemSaved())
   }, [id]);
 
+  // Save ids to store
   function saveStore(store: Array<number>) {
     localStorage["saved"] = JSON.stringify(store);
     toggleSave(!saved);
   }
 
+  // Returns true iff current recipe is saved
   function itemSaved() {
     var store = JSON.parse(localStorage["saved"] || "[]");
     return store.includes(id);

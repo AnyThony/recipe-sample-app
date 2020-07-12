@@ -12,8 +12,8 @@ import {
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import { ellipse, square, triangle, bookOutline, bookmarkOutline, settingsOutline } from 'ionicons/icons';
-import Tab1 from './pages/Tab1';
-import Tab2 from './pages/Tab2';
+import Browse from './pages/Browse';
+import Saved from './pages/Saved';
 import Tab3 from './pages/Tab3';
 import Content from "./pages/Content";
 
@@ -45,8 +45,8 @@ const App: React.FC = () => {
       <IonReactRouter>
         <IonTabs>
           <IonRouterOutlet>
-            <Route path="/recipe-sample-app/browse" component={Tab1} exact={true} />
-            <Route path="/recipe-sample-app/saved" component={Tab2} exact={true} />
+            <Route path="/recipe-sample-app/browse" component={Browse} exact={true} />
+            <Route path="/recipe-sample-app/saved" component={Saved} exact={true} />
             <Route path="/recipe-sample-app/settings" component={Tab3} />
             <Route path="/recipe-sample-app/content" component={Content} exact={true}/>
             <Route path="/recipe-sample-app/" render={() => <Redirect to="/recipe-sample-app/browse" />} exact={true} />

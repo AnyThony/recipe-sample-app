@@ -2,10 +2,11 @@ import React from 'react';
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import ExploreContainer from '../components/ExploreContainer';
 import ShowcaseImg from "../components/ShowcaseImg";
-import './Tab2.css';
+import './Saved.css';
 import MockData from "../components/mock/data.json";
-const Tab2: React.FC = () => {
+const Saved: React.FC = () => {
 
+  // Populate data with recipe content in save store
   function populate(){
     var store = JSON.parse(localStorage["saved"] || "[]");
     return store.map((s: number, index: number) => { 
@@ -43,4 +44,4 @@ const Tab2: React.FC = () => {
   );
 };
 
-export default Tab2;
+export default Saved;

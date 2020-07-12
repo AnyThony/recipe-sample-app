@@ -1,7 +1,7 @@
 import React from 'react';
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonSlides, IonSlide } from '@ionic/react';
 import SliderList from "../components/SliderList";
-import './Tab1.css';
+import './Browse.css';
 import mockData from "../components/mock/data.json"
 import {title} from "../util";
 
@@ -14,10 +14,12 @@ type RawMockData = {
   name: string
 }
 
+// Categories
 const cats = ["latin american", "home", "beans and peas", "potatoes", "pork ribs", "vegetables", "macaroni and cheese", "shellfish", "chicken", "potato side dishes", "breakfast and brunch", "salad", "banana bread", "quick bread", "world cuisine", "eggs", "meat and seafood", "pancakes", "asian", "seafood salad", "sandwiches", "european", "meat and poultry", "fish", "pork", "chili", "appetizers and snacks", "stuffed main dishes", "soups, stews and chili", "main dishes", "stews"];
 
-const Tab1: React.FC = () => {
+const Browse: React.FC = () => {
 
+  // Map data to feed into SliderList components
   const mapRawData = (raw: Array<RawMockData>) => {
     return raw.map((d, index) => ({
       src: d.thumbnail,
@@ -27,6 +29,8 @@ const Tab1: React.FC = () => {
     }))
   }
 
+  // Get recipe contents mapped to their categories
+  // Filtered to only return categories with >= 5 recipes
   const catContents = () => {
     var result:Array<JSX.Element> = [];
     cats.forEach((c, index) => {
@@ -45,10 +49,12 @@ const Tab1: React.FC = () => {
     return result;
   }
 
+  // Filter recipes by category
   const filterCat = (cat: string) => {
     return mapRawData(mockData).filter(d => d.cat.toLowerCase().indexOf(cat) != -1);
   }
 
+  // Get mock popular; just return some recipes for show
   const getPopular = () => {
     return mapRawData(mockData).slice(15, 25)
   }
@@ -83,11 +89,6 @@ const Tab1: React.FC = () => {
   );
 };
 
-/*const slideContentBig = {
-  spaceBetween: -115,
-  slidesOffsetBefore: -50,
-  slidesOffsetAfter: -50
-}*/
 const slideContent = {
   slidesPerView: "auto",
   spaceBetween: 15,
@@ -96,4 +97,4 @@ const slideContent = {
 }
 
 
-export default Tab1;
+export default Browse;
